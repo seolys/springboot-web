@@ -1,8 +1,8 @@
 package me.seolnavy.study.service.posts;
 
 import lombok.RequiredArgsConstructor;
-import me.seolnavy.study.web.domain.posts.Posts;
-import me.seolnavy.study.web.domain.posts.PostsRepository;
+import me.seolnavy.study.domain.posts.Posts;
+import me.seolnavy.study.domain.posts.PostsRepository;
 import me.seolnavy.study.web.dto.PostsListResponseDto;
 import me.seolnavy.study.web.dto.PostsResponseDto;
 import me.seolnavy.study.web.dto.PostsSaveRequestDto;

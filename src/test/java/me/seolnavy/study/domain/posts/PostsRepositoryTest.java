@@ -1,4 +1,4 @@
-package me.seolnavy.study.web.domain.posts;
+package me.seolnavy.study.domain.posts;
 
 import org.junit.After;
 import org.junit.Test;

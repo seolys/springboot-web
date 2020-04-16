@@ -1,9 +1,9 @@
-package me.seolnavy.study.web.domain.posts;
+package me.seolnavy.study.domain.posts;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import me.seolnavy.study.web.domain.BaseTimeEntity;
+import me.seolnavy.study.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 

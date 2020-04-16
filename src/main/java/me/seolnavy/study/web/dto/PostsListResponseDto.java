@@ -1,7 +1,7 @@
 package me.seolnavy.study.web.dto;
 
 import lombok.Getter;
-import me.seolnavy.study.web.domain.posts.Posts;
+import me.seolnavy.study.domain.posts.Posts;
 
 import java.time.LocalDateTime;
 

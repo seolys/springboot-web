@@ -3,7 +3,7 @@ package me.seolnavy.study.web.dto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import me.seolnavy.study.web.domain.posts.Posts;
+import me.seolnavy.study.domain.posts.Posts;
 
 @Getter
 @NoArgsConstructor
