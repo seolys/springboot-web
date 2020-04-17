@@ -1,5 +1,7 @@
+server:
+  port: 8081
+
 spring:
-  port: 8082
   profiles:
     include: oauth,real-db
   jpa:
