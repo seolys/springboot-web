@@ -30,16 +30,7 @@ deploy:
     acl: private # zip파일
     local_dir: deploy # value값으로 지정된 위치의 파일들이 S3로 전송된다.
     wait-until-deployed: true
-  - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
-    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
-    bucket: seolys-springboot-web-build
-    key: springboot-web.zip
-    bundle_type: zip
-    application: springboot-web # CodeDeploy에 등록한 애플리케이션 이름
-    deployment_group: springboot-web-group # CodeDeploy에 등록한 애플리케이션 배포그룹이름
-    region: ap-northeast-2
-    wait-until-deployed: true
+
 
 # CI 실행완료시 메일발송
 notifications:
