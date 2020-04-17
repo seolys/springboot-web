@@ -5,6 +5,10 @@ PROJECT_NAME=springboot-web
 
 cd $REPOSITORY/$PROJECT_NAME/
 
+echo "##########################"
+echo "## Github(pull) 연동 배포 ##"
+echo "##########################"
+
 echo "> Git pull"
 git pull
 
