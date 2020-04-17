@@ -3,3 +3,4 @@
 .idea
 out
 src/main/resources/application-oauth.yml
+build/resources/main/application-oauth.yml
