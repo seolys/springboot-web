@@ -27,7 +27,7 @@ deploy:
     bucket: seolys-springboot-web-build
     region: ap-northeast-2
     skip_cleanup: true
-    acl: private # zip파일 접근
+    acl: private # zip파일
     local_dir: deploy # value값으로 지정된 위치의 파일들이 S3로 전송된다.
     wait-until-deployed: true
 
