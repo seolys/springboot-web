@@ -1,8 +1,11 @@
+####################
+## CodeDeploy 설정 ##
+####################
 version: 0.0
 os: linux
 files:
-  - source:  /
-    destination: /home/ec2-user/app/step3/zip/
+  - source:  / # destination으로 이동시킬 대상 지정.(target)
+    destination: /home/ec2-user/app/step3/zip/ # source에서 지정된 파일을 받을 위치.
     overwrite: yes
 
 permissions:

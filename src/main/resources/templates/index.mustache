@@ -22,6 +22,7 @@
                 <th>게시글번호</th>
                 <th>제목</th>
                 <th>작성자</th>
+                <th>파일명</th>
                 <th>최종수정일</th>
             </tr>
             </thead>
@@ -32,6 +33,10 @@
                         <a href="/posts/update/{{id}}">{{title}}</a>
                     </td>
                     <td>{{author}}</td>
+                    <td>
+                        <a href="/posts/download/{{fileName}}">{{fileName}}</a>
+                        <img src="https://seolys-springboot-web-build.s3.ap-northeast-2.amazonaws.com/upload/{{fileName}}" style="width: 30px; height: 30px;" />
+                    </td>
                     <td>{{modifiedDate}}</td>
                 </tr>
             {{/posts}}

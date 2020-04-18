@@ -25,17 +25,27 @@ repositories {
     mavenCentral()
 }
 
+dependencyManagement {
+    imports {
+        mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.228'
+    }
+}
+
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-mustache')
+
     compile('com.h2database:h2')
 
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
     compile('org.springframework.session:spring-session-jdbc')
 
     compile("org.mariadb.jdbc:mariadb-java-client")
+
+    compile('com.amazonaws:aws-java-sdk-s3')
+    compile('com.googlecode.json-simple:json-simple:1.1.1')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile("org.springframework.security:spring-security-test")

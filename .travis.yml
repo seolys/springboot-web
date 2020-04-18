@@ -12,6 +12,7 @@ cache:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
 
+# application Build
 script: "./gradlew clean build"
 
 # deploy 실행전에 수행.
@@ -21,7 +22,7 @@ before_deploy:
   - cp bin/step3/*.sh before-deploy/
   - cp appspec.yml before-deploy/
   - cp build/libs/*.jar before-deploy/
-  - cd before-deploy && zip -r before-deploy * # before-deploy로 이동 후 전체 압축
+  - cd b4efore-deploy && zip -r before-deploy * # before-deploy로 이동 후 전체 압축
   - cd ../ && mkdir -p deploy # 상위 디렉토리 이동 후 deploy 디렉토리 생성
   - mv before-deploy/before-deploy.zip deploy/springboot-web.zip
 
@@ -35,10 +36,12 @@ deploy:
     acl: private # zip파일
     local_dir: deploy # value값으로 지정된 위치의 파일들이 S3로 전송된다.
     wait-until-deployed: true
+
+    # provider: codedeploy흐름 의문점 : S3 bucket에서 파일을 읽어들인 후 CodeDeploy에 파일과 함께 배포요청을 하는것인지... 아니면 CodeDeploy가 읽어가는게 맞는지...
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
-    bucket: seolys-springboot-web-build
+    bucket: seolys-springboot-web-build # S3 bucket
     key: springboot-web.zip
     bundle_type: zip
     application: springboot-web # CodeDeploy에 등록한 애플리케이션 이름
