@@ -5,3 +5,4 @@ out
 src/main/resources/application-oauth.yml
 build/resources/main/application-oauth.yml
 application-real-db.yml
+application-aws.yml

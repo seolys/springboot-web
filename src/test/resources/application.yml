@@ -1,4 +1,5 @@
 spring:
+  autoconfigure.exclude: me.seolnavy.study.config.AWSConfig
   h2:
     console:
       enabled: true
