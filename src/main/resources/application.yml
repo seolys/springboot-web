@@ -14,3 +14,8 @@ spring:
 
   session:
     store-type: jdbc
+
+logging:
+  level:
+    org.springframework: INFO
+    me.seolnavy.study: DEBUG
