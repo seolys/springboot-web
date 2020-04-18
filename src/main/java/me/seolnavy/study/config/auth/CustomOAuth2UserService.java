@@ -1,6 +1,7 @@
 package me.seolnavy.study.config.auth;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.seolnavy.study.config.auth.dto.OAuthAttributes;
 import me.seolnavy.study.config.auth.dto.SessionUser;
 import me.seolnavy.study.domain.user.User;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Collections;
 import java.util.Map;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
@@ -41,7 +43,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
         User user = saveOrUpdate(attributes);
         httpSession.setAttribute("user", new SessionUser(user)); // User.class는 엔티티이기때문에, 직렬화를 구현한 별도의 dto를 세션에 세팅.
-        System.out.println("attributes.getNameAttributeKey() : " + attributes.getNameAttributeKey());
+        log.debug("attributes.getNameAttributeKey() : " + attributes.getNameAttributeKey());
         return new DefaultOAuth2User(
                 Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
                 attributes.getAttributes(),

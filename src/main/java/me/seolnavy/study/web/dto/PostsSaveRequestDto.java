@@ -6,8 +6,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @ToString
+@NoArgsConstructor
 public class PostsSaveRequestDto {
     private MultipartFile picture;
     private String title;

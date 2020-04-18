@@ -2,11 +2,13 @@ package me.seolnavy.study.config.auth.dto;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import me.seolnavy.study.domain.user.Role;
 import me.seolnavy.study.domain.user.User;
 
 import java.util.Map;
 
+@Slf4j
 @Getter
 public class OAuthAttributes {
     private Map<String, Object> attributes;
@@ -35,8 +37,11 @@ public class OAuthAttributes {
     private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes) {
         Map<String, Object> response = (Map<String, Object>) attributes.get("response");
 
-        for (String s : response.keySet()) {
-            System.out.println(s + " = " + response.get(s));
+        if(log.isDebugEnabled()) {
+            log.debug("Attributes key,value print");
+            for (String s : response.keySet()) {
+                log.debug(s + " = " + response.get(s));
+            }
         }
 
         return OAuthAttributes.builder()
@@ -49,6 +54,13 @@ public class OAuthAttributes {
     }
 
     private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {
+        if(log.isDebugEnabled()) {
+            log.debug("Attributes key,value print");
+            for (String s : attributes.keySet()) {
+                log.debug(s + " = " + attributes.get(s));
+            }
+        }
+
         return OAuthAttributes.builder()
                 .name((String) attributes.get("name"))
                 .email((String) attributes.get("email"))

@@ -23,8 +23,6 @@ public class AWSConfig implements WebMvcConfigurer {
 
     @Bean
     public BasicAWSCredentials awsCredentials() {
-        System.out.println("accessKey : " + accessKey);
-        System.out.println("secretKey : " + secretKey);
         BasicAWSCredentials awsCreds = new BasicAWSCredentials(accessKey, secretKey);
         return awsCreds;
     }

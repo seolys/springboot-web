@@ -33,7 +33,6 @@ public class IndexController {
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
-        log.debug("인덱스 페이지 호출.");
         return "index";
     }
 
