@@ -26,11 +26,14 @@ public class PostsApiController {
         return postsService.save(requestDto);
     }
 
+
     @PostMapping("/api/v2/posts")
     public Long saveV2(PostsSaveRequestDto requestDto) throws ParseException, IOException {
         log.debug("requestDto : " + requestDto);
         log.debug("file : " + requestDto.getPicture());
-        PutObjectResult putResult = awsS3Service.uploadObject(requestDto.getPicture());
+        if(requestDto.getPicture() != null) {
+            PutObjectResult putResult = awsS3Service.uploadObject(requestDto.getPicture());
+        }
         return postsService.save(requestDto);
     }
 

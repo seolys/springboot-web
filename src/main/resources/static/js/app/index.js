@@ -37,7 +37,11 @@ var main = {
         formData.append("title", data.title);
         formData.append("author", data.author);
         formData.append("content", data.content);
-        formData.append("picture", $("#picture")[0].files[0]);
+
+        var picture = $("#picture")[0].files[0];
+        if(picture) {
+            formData.append("picture", picture);
+        }
 
         $.ajax({
               url : "/api/v2/posts"

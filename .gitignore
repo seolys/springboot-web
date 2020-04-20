@@ -1,6 +1,7 @@
 # Project exclude paths
 .gradle
 .idea
+build
 out
 src/main/resources/application-oauth.yml
 build/resources/main/application-oauth.yml
